@@ -1,9 +1,9 @@
 {
   "name": "quiz",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "start": "parcel ./public/index.html --no-cache",
+    "build": "parcel build ./public/index.html --no-cache",
     "server": "json-server --watch ./src/utils/data/questions.json --port 4000",
     "test": "jest"
   },
