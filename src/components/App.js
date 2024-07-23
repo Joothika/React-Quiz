@@ -11,6 +11,7 @@ import Progress from "./Progress";
 import Finished from "./Finished";
 import Footer from "./Footer";
 import Timer from "./Timer";
+import { data } from "../utils/data/questions";
 
 const SEC_PER_QUES = 30;
 const initialState = {
@@ -93,9 +94,10 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const quizData = await fetch("http://localhost:4000/questions");
-        const data = await quizData.json();
-        dispatch({ type: "dataReceived", payload: data });
+        // const quizData = await fetch("http://localhost:4000/questions");
+        // const data = await quizData.json();
+        const quesData = data;
+        dispatch({ type: "dataReceived", payload: quesData });
       } catch (err) {
         dispatch({ type: "dataFailed" });
         console.error("Error in fetching data");
